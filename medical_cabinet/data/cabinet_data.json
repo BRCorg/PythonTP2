@@ -1,1 +1,48 @@
-{}
+{
+  "patients": [
+    {
+      "_ssn": "123456789012345",
+      "nom": "Dupont",
+      "prenom": "Jean",
+      "date_naissance": "1980-05-12",
+      "adresse": "1 rue de Paris, 75000 Paris",
+      "_telephone": "0601020304"
+    },
+    {
+      "_ssn": "987654321098765",
+      "nom": "Martin",
+      "prenom": "Claire",
+      "date_naissance": "1992-11-23",
+      "adresse": "10 avenue de Lyon, 69000 Lyon",
+      "_telephone": "0611223344"
+    },
+    {
+      "_ssn": "111111111155555",
+      "nom": "Guven",
+      "prenom": "Berancan",
+      "date_naissance": "2002-02-19",
+      "adresse": "Rue de Paris",
+      "_telephone": "0155555555"
+    }
+  ],
+  "consultations": [
+    {
+      "date_heure": "2026-02-01 09:00",
+      "patient_ssn": "123456789012345",
+      "medecin": "Bernard",
+      "motif": "Fièvre",
+      "diagnostic": null,
+      "prescriptions": [],
+      "statut": "réalisée"
+    },
+    {
+      "date_heure": "2026-02-02 10:00",
+      "patient_ssn": "111111111155555",
+      "medecin": "Sonia",
+      "motif": "Gastro",
+      "diagnostic": null,
+      "prescriptions": [],
+      "statut": "annulée"
+    }
+  ]
+}
