@@ -4,6 +4,7 @@ Fonctions métier pour la gestion des consultations du cabinet médical
 import json
 import os
 from models import Consultation, ConsultationNotFoundError, InvalidConsultationStatusError
+
 from utils.decorators import log_action
 
 DATA_FILE = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "cabinet_data.json")
@@ -37,6 +38,7 @@ def charger_consultations():
 
 
 @log_action("Planification d'une consultation")
+@log_action("Planification d'une consultation")
 def planifier_consultation(consultations, patients, patient, date_heure, medecin, motif):
     """
     Planifie une nouvelle consultation pour un patient
@@ -64,6 +66,7 @@ def planifier_consultation(consultations, patients, patient, date_heure, medecin
     return consultation
 
 
+@log_action("Affichage des consultations à venir")
 def afficher_consultations_a_venir(consultations):
     """
     Affiche toutes les consultations planifiées
@@ -81,6 +84,7 @@ def afficher_consultations_a_venir(consultations):
             print(f"{i}. {c}")
 
 
+@log_action("Consultation marquée réalisée")
 @log_action("Consultation marquée réalisée")
 def marquer_consultation_realisee(consultations, patients, consultation):
     """
@@ -105,6 +109,7 @@ def marquer_consultation_realisee(consultations, patients, consultation):
 
 
 @log_action("Consultation annulée")
+@log_action("Consultation annulée")
 def annuler_consultation(consultations, patients, consultation):
     """
     Annule une consultation
@@ -128,6 +133,7 @@ def annuler_consultation(consultations, patients, consultation):
 
 
 @log_action("Ajout d'un diagnostic")
+@log_action("Ajout d'un diagnostic")
 def ajouter_diagnostic(consultations, patients, consultation, diagnostic):
     """
     Ajoute un diagnostic à une consultation réalisée
@@ -144,6 +150,7 @@ def ajouter_diagnostic(consultations, patients, consultation, diagnostic):
     sauvegarder_donnees(patients, consultations)
 
 
+@log_action("Ajout d'une prescription")
 @log_action("Ajout d'une prescription")
 def ajouter_prescription(consultations, patients, consultation, prescription):
     """

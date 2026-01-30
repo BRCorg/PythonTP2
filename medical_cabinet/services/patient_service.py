@@ -112,6 +112,7 @@ def ajouter_patient(patients, consultations, ssn, nom, prenom, date_naissance, a
     return patient
 
 
+@log_action("Recherche d'un patient")
 @validate_patient
 def rechercher_patient(patients, ssn):
     """
@@ -133,6 +134,7 @@ def rechercher_patient(patients, ssn):
     raise PatientNotFoundError(f"Patient {ssn} non trouvé.")
 
 
+@log_action("Affichage de la liste des patients")
 def afficher_patients(patients):
     """
     Affiche la liste de tous les patients
@@ -148,6 +150,7 @@ def afficher_patients(patients):
             print(f"{p.ssn} - {p.nom} {p.prenom} ({p.age} ans)")
 
 
+@log_action("Affichage de l'historique d'un patient")
 @validate_patient
 def afficher_historique_patient(patients, ssn):
     """
